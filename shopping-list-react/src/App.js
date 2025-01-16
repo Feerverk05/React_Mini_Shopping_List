@@ -9,12 +9,17 @@ function App() {
 
     const handleAddItems =(item)=>
     {
-        setItems(items=>[...items,item])
+        setItems((items)=>[...items,item])
     }
+
+    const onDeleteItems =(id)=>
+      {
+          setItems((items)=>items.filter((item) => item.id !== id));
+      }
   return (
     <div className="appWrapper">
       <Header/>
-      <Main items={items} handleAddItems={handleAddItems}/>
+      <Main items={items} handleAddItems={handleAddItems} onDeleteItems={onDeleteItems}/>
       <Footer/>
     </div>
   );
