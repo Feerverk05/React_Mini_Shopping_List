@@ -25,7 +25,7 @@ function App() {
     <div className="appWrapper">
       <Header/>
       <Main items={items} handleAddItems={handleAddItems} onDeleteItems={onDeleteItems} handleDoneItem={handleDoneItem}/>
-      <Footer/>
+      <Footer items={items}/>
     </div>
   );
 }
