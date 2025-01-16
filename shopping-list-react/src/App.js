@@ -16,10 +16,15 @@ function App() {
       {
           setItems((items)=>items.filter((item) => item.id !== id));
       }
+
+      const handleDoneItem =(id)=>
+        {
+            setItems((items)=>items.map((item) => item.id ? { ...item, packed: !item.packed } : item ));
+        }
   return (
     <div className="appWrapper">
       <Header/>
-      <Main items={items} handleAddItems={handleAddItems} onDeleteItems={onDeleteItems}/>
+      <Main items={items} handleAddItems={handleAddItems} onDeleteItems={onDeleteItems} handleDoneItem={handleDoneItem}/>
       <Footer/>
     </div>
   );
